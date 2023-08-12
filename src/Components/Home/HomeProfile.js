@@ -51,14 +51,16 @@ const HomeProfile = () => {
 const Wrapper = styled.div`
   /* border: solid 1px white; */
   /* margin-top: 1.5rem; */
-  width: 100vw;
+  width: 95vw;
   height: 100vh;
   height: auto;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
+  border: solid 0.5px var(--outline);
+  margin-top: 1.5rem;
   /* margin-top: 1.5rem;
   border-top: solid 1px var(--outline); */
   /* border-bottom: solid 1px var(--outline); */
@@ -98,7 +100,7 @@ const Wrapper = styled.div`
 
   .profile {
     height: 200px;
-    width: 60%;
+    width: 80%;
     border-radius: 10px;
     background: #000000;
     margin: 1rem;
@@ -106,7 +108,7 @@ const Wrapper = styled.div`
   }
 
   .profile-details {
-    width: 70%;
+    width: 80%;
     text-align: center;
     font-size: 1.3em;
     margin: 1rem;

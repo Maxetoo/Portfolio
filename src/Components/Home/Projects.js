@@ -51,15 +51,15 @@ const Wrapper = styled.div`
 
   .title {
     border: solid 1px var(--outline);
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem;
+    padding: 0.6rem;
     border-radius: 20px;
     font-size: 0.8em;
-    margin-top: 1rem;
+    margin-top: 4rem;
   }
 
   .project-icon {
