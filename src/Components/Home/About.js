@@ -5,15 +5,15 @@ import { AiOutlineUser } from 'react-icons/ai'
 const About = () => {
   return (
     <Wrapper>
-      <div className='title'>
-        <AiOutlineUser className='about-icon' />
-        ABOUT
+      <div className='title--container'>
+        <AiOutlineUser className='title--icon' />
+        <h5 className='title'>ABOUT</h5>
       </div>
-      <div className='about-details'>
+      <div className='about--details'>
         Every great design begin with an even{' '}
-        <span className='colored-text'>better story</span>
+        <span className='colored--text'>better story</span>
       </div>
-      <p>
+      <p className='about--desc'>
         Since beginning my journey as a freelance designer nearly 8 years ago,
         I've done remote work for agencies, consulted for startups, and
         collaborated with talented people to create digital products for both
@@ -26,11 +26,48 @@ const About = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: auto;
-  padding: 2rem;
-  margin-top: -4rem;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  .title {
+  .title--container {
+    width: auto;
+    border: solid 1px var(--outline);
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-size: 1em;
+    margin-top: 4rem;
+  }
+
+  .title--icon {
+    margin-right: 1rem;
+  }
+
+  .about--details {
+    margin-top: 3rem;
+    font-size: 2.5em;
+    width: 90%;
+  }
+
+  .colored--text {
+    color: #28e98c;
+  }
+
+  .about--desc {
+    margin-top: 3rem;
+    color: var(--outline);
+    line-height: 1.5rem;
+    width: 90%;
+  }
+
+  /* .title {
     border: solid 1px var(--outline);
     width: 100%;
     display: flex;
@@ -41,7 +78,7 @@ const Wrapper = styled.div`
     border-radius: 20px;
     font-size: 0.8em;
     margin-top: 1rem;
-  }
+  } */
 
   .about-icon {
     margin-right: 1rem;

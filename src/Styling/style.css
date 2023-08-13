@@ -1,6 +1,7 @@
 @import url('./variables.css');
 @import url('https://fonts.googleapis.com/css2?family=Borel&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 * {
   box-sizing: border-box;
   padding: 0;
@@ -9,11 +10,14 @@
 
 body {
   -webkit-tap-highlight-color: transparent;
-  font-family: 'Varela Round', sans-serif;
+  /* font-family: 'Varela Round', sans-serif; */
+  font-family: 'Inter', sans-serif;
   background: var(--bgcolor);
   color: var(--default-font-color);
 }
 
 button {
-  font-family: 'Varela Round', sans-serif;
+  /* font-family: 'Varela Round', sans-serif;
+   */
+  font-family: 'Inter', sans-serif;
 }

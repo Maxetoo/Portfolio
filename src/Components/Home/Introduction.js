@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { AiOutlineHome } from 'react-icons/ai'
+import { AiOutlineHome, AiOutlineArrowDown } from 'react-icons/ai'
 import { MdWorkOutline } from 'react-icons/md'
 import { SiBookmeter } from 'react-icons/si'
+import ScrollImage from '../../Assets/round-text.png'
 // AiOutlineHome
 // MdWorkOutline
 // SiBookmeter
@@ -10,7 +11,36 @@ import { SiBookmeter } from 'react-icons/si'
 const Introduction = () => {
   return (
     <Wrapper>
-      <div className='title'>
+      <div className='title--container'>
+        <AiOutlineHome className='title--icon' />
+        <h5 className='title'>INTRODUCTION</h5>
+      </div>
+      <div className='intro--details'>
+        Hello, my name is Maxwell Etombi and I am a{' '}
+        <span className='colored--text'>Web Developer</span>
+      </div>
+      <p className='intro--desc'>
+        I bring beautiful websites to live through by essentric skills. Just
+        simple like that! Over two years of experince building and creating web
+        products
+      </p>
+      <div className='project-scroller--container'>
+        <img src={ScrollImage} alt='' className='scroll--img' />
+        <div className='scroll--icon'>
+          <AiOutlineArrowDown />
+        </div>
+      </div>
+      <div className='profile-counter--container'>
+        <div className='years--counter'>
+          <h3 className='time colored--counter'>2+</h3>
+          <p className='time--desc counter--desc'>YEARS OF EXPERIENCE</p>
+        </div>
+        <div className='projects--counter'>
+          <h3 className='projects colored--counter'>50+</h3>
+          <p className='projects--desc counter--desc'>PROJECTS COMPLETED</p>
+        </div>
+      </div>
+      {/* <div className='title'>
         <AiOutlineHome className='intro-icon' />
         INTRODCTION
       </div>
@@ -22,90 +52,104 @@ const Introduction = () => {
         I bring beautiful websites to live through by essentric skills. Just
         simple like that! Over two years of experince building and creating web
         products
-      </p>
-      {/* <div className='experince-meter'>
-        <SiBookmeter className='meter-icon' />
-        Over 2+ years of Experince
-      </div>
-      <div className='projects-done'>
-        <MdWorkOutline className='meter-icon' />
-        50+ projects completed
-      </div> */}
+      </p> */}
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
-  padding: 2rem;
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  .title {
+  .title--container {
+    width: auto;
     border: solid 1px var(--outline);
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.5rem;
     border-radius: 20px;
-    font-size: 0.8em;
-    margin-top: 2rem;
-  }
-
-  .intro-icon {
-    margin-right: 1rem;
-    color: #28e98c;
-  }
-
-  .intro-details {
+    font-size: 1em;
     margin-top: 3rem;
-    font-size: 2em;
   }
 
-  .colored-text {
+  .title--icon {
+    margin-right: 1rem;
+  }
+
+  .intro--details {
+    margin-top: 3rem;
+    font-size: 2.5em;
+    width: 90%;
+  }
+
+  .colored--text {
     color: #28e98c;
   }
 
-  p {
+  .intro--desc {
     margin-top: 3rem;
     color: var(--outline);
     line-height: 1.5rem;
+    width: 90%;
   }
 
-  .experince-meter {
-    height: 100px;
-    width: 100%;
-    border-radius: 20px;
-    margin-top: 3rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* background: #343639; */
-    background: #1a1a1c;
-    font-size: 1.2em;
-    /* border: solid 1px #28e98c; */
-    border: solid 1px var(--outline);
-  }
-
-  .projects-done {
-    height: 100px;
-    width: 100%;
-    border-radius: 20px;
+  .project-scroller--container {
+    height: 180px;
+    width: 180px;
+    border: solid 0.5px var(--outline);
     margin-top: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 1rem;
+    position: relative;
+    display: grid;
+    place-content: center;
+  }
+
+  .scroll--img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .scroll--icon {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 2em;
+    top: 40%;
+    left: 40%;
+  }
+
+  .profile-counter--container {
+    margin-top: 3rem;
+    width: 80%;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    background: #343639;
-    font-size: 1.2em;
-
-    border: solid 1px var(--outline);
+    justify-content: space-between;
   }
 
-  .meter-icon {
-    margin-right: 1rem;
+  .profile-counter--container > div {
+    width: 40%;
+  }
+
+  .colored--counter {
+    color: #28e98c;
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+  }
+
+  .counter--desc {
+    color: var(--outline);
+    line-height: 1.5rem;
+    font-size: 0.8em;
   }
 
   @media only screen and (min-width: 600px) {

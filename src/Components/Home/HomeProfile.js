@@ -6,17 +6,42 @@ import { Link } from 'react-router-dom'
 import { FiArrowDownRight } from 'react-icons/fi'
 // FiArrowDownRight
 
-const data = [1, 2, 3, 4]
-
 const HomeProfile = () => {
   return (
     <Wrapper>
-      {/* <div className='menu-container'>
-        <HiMenuAlt4 />
-      </div> */}
-      <div className='profile-head'>
+      <div className='profile-container'>
+        <div className='profile--head'>
+          <div className='profile--name'>Maxwell.</div>
+          <div className='menu--container'>
+            <HiMenuAlt4 />
+          </div>
+        </div>
+        <img
+          src='https://images.unsplash.com/photo-1458681407517-f6a21aad9ec9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
+          alt='profile'
+          className='profile--img'
+        />
+        <div className='profile--info'>
+          <h4 className='profile--email'>etombimaxwell@gmail.com</h4>
+          <h4 className='profile--title'>Website Developer</h4>
+        </div>
+        <div className='social--container'>
+          {socials.map((value) => {
+            const { id, icon, link } = value
+            return (
+              <Link to={link} className='social--link' key={id}>
+                {icon}
+              </Link>
+            )
+          })}
+        </div>
+        <button type='button'>
+          Learn More
+          <FiArrowDownRight className='learnmore--icon' />
+        </button>
+      </div>
+      {/* <div className='profile-head'>
         <h3 className='profile-name'>Maxwell.</h3>
-        {/* <p>Website Developer</p> */}
         <div className='menu-container'>
           <HiMenuAlt4 />
         </div>
@@ -26,10 +51,7 @@ const HomeProfile = () => {
         alt=''
         className='profile'
       />
-      <div className='profile-details'>
-        I am a software engineer who possesses a passion for crafting elegant
-        and high-performance web applications.
-      </div>
+      <div className='profile-details'>Website Developer</div>
       <div className='socials-container'>
         {socials.map((value) => {
           const { id, icon, link } = value
@@ -43,87 +65,99 @@ const HomeProfile = () => {
       <button type='button'>
         Learn More
         <FiArrowDownRight className='learnmore-icon' />
-      </button>
+      </button> */}
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  /* border: solid 1px white; */
-  /* margin-top: 1.5rem; */
-  width: 95vw;
+  width: 100vw;
   height: 100vh;
-  height: auto;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem;
-  border: solid 0.5px var(--outline);
-  margin-top: 1.5rem;
-  /* margin-top: 1.5rem;
-  border-top: solid 1px var(--outline); */
-  /* border-bottom: solid 1px var(--outline); */
-  /* border-top: solid 1px var(--outline);
-  border-bottom: solid 1px var(--outline);
-  margin-top: 2rem; */
 
-  .profile-head {
+  .profile-container {
+    height: auto;
     width: 100%;
-    height: 100px;
+    border: solid 0.5px var(--outline);
+    margin-top: 1.5rem;
+    border-radius: 30px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile--head {
+    width: 100%;
+    height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
 
-  .menu-container {
+  .profile--name {
+    font-family: 'Borel', cursive;
+    font-size: 1.5em;
+  }
+
+  .menu--container {
     position: fixed;
     z-index: 200;
-    top: 5%;
+    top: 6%;
     left: 80%;
     display: grid;
     place-content: center;
-    height: 60px;
-    width: 60px;
+    height: 55px;
+    width: 55px;
     border-radius: 50%;
-    background: #28e98c;
-    border: solid 1px black;
-    color: #000000;
-    /* color: white; */
+    background: #181818;
+    border: solid 1px var(--outline);
+    /* color: var(--outline); */
+    color: #ffff;
+    font-size: 1.5em;
+    cursor: pointer;
   }
 
-  .profile-name {
-    font-family: 'Borel', cursive;
-    font-size: 2em;
-  }
-
-  .profile {
-    height: 200px;
-    width: 80%;
+  .profile--img {
+    height: 250px;
+    width: 60%;
     border-radius: 10px;
     background: #000000;
-    margin: 1rem;
+    margin: 2rem;
     object-fit: cover;
   }
 
-  .profile-details {
-    width: 80%;
-    text-align: center;
-    font-size: 1.3em;
+  .profile--info {
     margin: 1rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .socials-container {
+  .profile--email {
+    font-size: 1em;
+    color: var(--outline);
+  }
+
+  .profile--title {
+    font-size: 1.5em;
+    margin-top: 0.5rem;
+  }
+
+  .social--container {
     height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 1rem;
+    margin-top: 0.5rem;
   }
 
-  .social-link {
+  .social--link {
     border: solid 2px var(--outline);
     color: var(--outline);
     text-decoration: none;
@@ -140,7 +174,7 @@ const Wrapper = styled.div`
     height: 50px;
     border: none;
     border-radius: 20px;
-    margin: 1rem;
+    margin-top: 1.5rem;
     cursor: pointer;
     background: #28e98c;
     color: #000000;
@@ -150,7 +184,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
 
-    .learnmore-icon {
+    .learnmore--icon {
       margin-left: 0.5rem;
     }
   }
