@@ -8,19 +8,17 @@ import { Link } from 'react-router-dom'
 const Projects = () => {
   return (
     <Wrapper>
-      <div className='title'>
-        <AiOutlineUser className='project-icon' />
-        PROJECTS
-      </div>
-      <div className='project-container'>
-        {/* <div className='selected-project'>
-          <div className='details-head'>
-            <h3>Name</h3>
-            <h4>Tech used</h4>
-            <p>Desc</p>
-          </div>
-          <div className='details-footer'>view</div>
-        </div> */}
+      <div className = 'title--container' >
+        <AiOutlineUser className = 'title--icon' />
+        <h5 className='title'>PROJECTS</h5> 
+        </div> 
+        <div className ='project--details' >
+        Featured { ' ' } 
+        <span className = 'colored--text' > 
+        Projects
+        </span> 
+        </div> 
+      <div className='project--container'>
         {projects.map((value) => {
           const { id, name, description, link, techUsed } = value
           return (
@@ -45,21 +43,44 @@ const Projects = () => {
 }
 
 const Wrapper = styled.div`
-  width: 100vw;
-  height: auto;
-  padding: 2rem;
+width: 100vw;
+height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
-  .title {
+  .title--container {
+    width: auto;
     border: solid 1px var(--outline);
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.5rem;
     border-radius: 20px;
-    font-size: 0.8em;
+    font-size: 1em;
     margin-top: 4rem;
+  }
+
+  .title--icon {
+    margin-right: 1rem;
+  }
+  .project--details {
+    margin-top: 3rem;
+    font-size: 2.5em;
+    width: 90%;
+  }
+
+  .colored--text {
+    color: #28e98c;
+  }
+
+  .project--container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .project-icon {
@@ -81,10 +102,11 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 3rem;
-    padding: 2rem;
-    background: #1a1a1c;
+    padding: 1.5rem;
+    /* background: #1a1a1c; */
+    background: none;
     border-radius: 20px;
-    border: solid 1px var(--outline);
+    border: solid 0.5px var(--outline);
   }
 
   .details-head {
@@ -93,6 +115,7 @@ const Wrapper = styled.div`
 
   h4 {
     margin-top: 1rem;
+    opacity: 0.8;
   }
 
   p {

@@ -3,30 +3,31 @@ import styled from 'styled-components'
 import { AiOutlineUser } from 'react-icons/ai'
 
 const About = () => {
-  return (
-    <Wrapper>
-      <div className='title--container'>
-        <AiOutlineUser className='title--icon' />
-        <h5 className='title'>ABOUT</h5>
-      </div>
-      <div className='about--details'>
-        Every great design begin with an even{' '}
-        <span className='colored--text'>better story</span>
-      </div>
-      <p className='about--desc'>
+    return ( <Wrapper >
+        <div className = 'title--container' >
+        <AiOutlineUser className = 'title--icon' />
+        <h5 className = 'title' > ABOUT </h5> 
+        </div> 
+        <div className = 'about--details' >
+        Every great design begin with an even { ' ' } 
+        <span className = 'colored--text' > 
+        better story 
+        </span> 
+        </div> 
+        <p className = 'about--desc' >
         Since beginning my journey as a freelance designer nearly 8 years ago,
-        I've done remote work for agencies, consulted for startups, and
-        collaborated with talented people to create digital products for both
-        business and consumer use. I'm quietly confident, naturally curious, and
-        perpetually working on improving my chopsone design problem at a time.
-      </p>
-    </Wrapper>
-  )
+        I 've done remote work for agencies, consulted for startups, and
+        collaborated with talented people to create digital products
+        for both business and consumer use.I 'm quietly confident, naturally curious, and
+        perpetually working on improving my chopsone design problem at a time. 
+        </p> 
+        </Wrapper>
+    )
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div `
   width: 100vw;
-  height: 100vh;
+  max-height: 100vh;
   padding: 1rem;
   display: flex;
   flex-direction: column;
