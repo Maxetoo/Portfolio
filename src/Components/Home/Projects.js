@@ -146,15 +146,26 @@ min-height: 100vh;
   }
 
   @media only screen and (min-width: 600px) {
+    
     margin-top: 3rem;
 
-    .title {
-      width: 30%;
-    }
+.title--container {
+  width: 30%;
+}
 
-    h3 {
-      font-size: 1.3em;
-    }
+.project--details {
+font-size: 2.5em;
+}
+
+.project--container {
+  display: grid;
+grid-template-columns: auto auto;
+/* grid-template-rows: repeat(5, 1fr); */
+}
+
+.selected--project {
+  height: 300px;
+}
   }
 
   @media only screen and (min-width: 768px) {

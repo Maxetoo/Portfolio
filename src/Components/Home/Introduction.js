@@ -153,16 +153,16 @@ const Wrapper = styled.div`
   }
 
   @media only screen and (min-width: 600px) {
+
     margin-top: 3rem;
 
-    .title {
-      width: 30%;
-    }
-    .intro-details {
-      font-size: 2.5em;
-      margin-top: 5rem;
-      line-height: 3rem;
-    }
+.title--container {
+  width: 30%;
+}
+
+.intro--details {
+font-size: 2.5em;
+}
   }
 
   @media only screen and (min-width: 768px) {

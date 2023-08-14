@@ -42,7 +42,6 @@ const Wrapper = styled.div`
   /* margin-top: -4rem; */
 
   .title--container {
-    width: auto;
     border: solid 1px var(--outline);
     width: 50%;
     display: flex;
@@ -87,7 +86,7 @@ const Wrapper = styled.div`
   }
 
   .social--container {
-    margin-top: 1rem;
+    margin-top: 3rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -104,15 +103,14 @@ const Wrapper = styled.div`
   @media only screen and (min-width: 600px) {
     margin-top: 3rem;
 
-    .title {
-      width: 25%;
-    }
+.title--container {
+  width: 30%;
+}
 
-    .contact-details {
-      font-size: 2.5em;
-      margin-top: 5rem;
-      line-height: 3rem;
-    }
+.contact--details {
+font-size: 2.5em;
+}
+
   }
 
   @media only screen and (min-width: 768px) {

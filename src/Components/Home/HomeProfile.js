@@ -16,11 +16,15 @@ const HomeProfile = () => {
             <HiMenuAlt4 />
           </div>
         </div>
-        <img
+        {/* <img
           src='https://images.unsplash.com/photo-1458681407517-f6a21aad9ec9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
           alt='profile'
           className='profile--img'
-        />
+        /> */}
+        <img
+          src='https://cdn.dribbble.com/userupload/6385587/file/original-5a2c33f1b9dff537e9d6e30e51311b23.png?crop=0x0-3201x2401&resize=640x480&vertical=center'
+          alt='profile'
+          className='profile--img'/>
         <div className='profile--info'>
           <h4 className='profile--email'>etombimaxwell@gmail.com</h4>
           <h4 className='profile--title'>Website Developer</h4>
@@ -54,7 +58,7 @@ const Wrapper = styled.div`
   .profile-container {
     height: auto;
     width: 100%;
-    /* border: solid 0.5px var(--outline); */
+    border: solid 0.5px var(--outline);
     margin-top: 1.5rem;
     border-radius: 30px;
     padding: 2rem;
