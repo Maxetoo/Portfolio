@@ -22,7 +22,7 @@ const Projects = () => {
         {projects.map((value) => {
           const { id, name, description, link, techUsed } = value
           return (
-            <div className='selected-project' key={id}>
+            <div className='selected--project' key={id}>
               <div className='details-head'>
                 <h3>{name}</h3>
                 <h4>{techUsed}</h4>
@@ -44,7 +44,7 @@ const Projects = () => {
 
 const Wrapper = styled.div`
 width: 100vw;
-height: 100vh;
+min-height: 100vh;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -88,13 +88,13 @@ height: 100vh;
     color: #28e98c;
   }
 
-  .project-container {
+  .project--container {
     width: 100%;
     height: auto;
-    margin-top: 5rem;
+    margin-top: 1rem;
   }
 
-  .selected-project {
+  .selected--project {
     width: 100%;
     height: 300px;
     display: flex;
@@ -103,9 +103,8 @@ height: 100vh;
     align-items: flex-start;
     margin-top: 3rem;
     padding: 1.5rem;
-    /* background: #1a1a1c; */
     background: none;
-    border-radius: 20px;
+    /* border-radius: 5px; */
     border: solid 0.5px var(--outline);
   }
 

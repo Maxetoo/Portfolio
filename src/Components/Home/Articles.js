@@ -11,10 +11,10 @@ import { FiArrowUpRight } from 'react-icons/fi'
 const Articles = () => {
   return (
     <Wrapper>
-      <div className='title'>
-        <BiBookAlt className='articles-icon' />
-        ARTICLES
-      </div>
+      <div className = 'title--container' >
+        <BiBookAlt className = 'title--icon' />
+        <h5 className='title'>ARTICLES</h5> 
+        </div> 
       <div className='articles-details'>
         My <span className='colored-text'>Articles</span>
       </div>
@@ -63,21 +63,31 @@ const Articles = () => {
 const Wrapper = styled.div`
   width: 100vw;
   height: auto;
-  padding: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   /* margin-top: -4rem; */
 
-  .title {
+  .title--container {
+    width: auto;
     border: solid 1px var(--outline);
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.5rem;
     border-radius: 20px;
-    font-size: 0.8em;
-    margin-top: 1rem;
+    font-size: 1em;
+    margin-top: 4rem;
   }
+
+  .title--icon {
+    margin-right: 1rem;
+  }
+
+  
 
   .articles-icon {
     margin-right: 1rem;
@@ -109,9 +119,9 @@ const Wrapper = styled.div`
     align-items: flex-start;
     margin-top: 3rem;
     padding: 2rem;
-    background: #1a1a1c;
-    border-radius: 20px;
-    border: solid 1px var(--outline);
+    background: none;
+    /* border-radius: 20px; */
+    border: solid 0.5px var(--outline);
   }
 
   .article--head {
