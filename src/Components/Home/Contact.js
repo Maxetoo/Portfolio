@@ -3,20 +3,31 @@ import styled from 'styled-components'
 import { BiSolidContact } from 'react-icons/bi'
 // BiSolidContact
 import { Link } from 'react-router-dom'
+import { socials } from '../../Data/Data'
 
 const Contact = () => {
   return (
     <Wrapper>
-      <div className='title'>
-        <BiSolidContact className='contact-icon' />
-        CONTACT
-      </div>
+      <div className = 'title--container' >
+        <BiSolidContact className = 'title--icon' />
+        <h5 className='title'>CONTACT</h5> 
+        </div> 
       <div className='contact-details'>
         Ready to work <span className='colored-text'>with me ?</span>
       </div>
       <p>SAY HELLO</p>
       <p>maxeto@gmail.com</p>
-      <div className='contact-footer'></div>
+      {/* <div className='contact-footer'>
+        
+      </div> */}
+      <div className="social--container">
+      {socials.map((value) => {
+          const {link, id, icon} = value
+          return <Link to={link} className='social--link' key={id}>
+          {icon}
+        </Link>
+        })}
+      </div>
     </Wrapper>
   )
 }
@@ -24,20 +35,30 @@ const Contact = () => {
 const Wrapper = styled.div`
   width: 100vw;
   height: auto;
-  padding: 2rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin-top: -4rem; */
 
-  .title {
+  .title--container {
+    width: auto;
     border: solid 1px var(--outline);
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 0.6rem;
+    padding: 0.5rem;
     border-radius: 20px;
-    font-size: 0.8em;
-    margin-top: 1rem;
+    font-size: 1em;
+    margin-top: 4rem;
   }
+
+  .title--icon {
+    margin-right: 1rem;
+  }
+  
 
   .contact-icon {
     margin-right: 1rem;
@@ -63,6 +84,21 @@ const Wrapper = styled.div`
     height: 2px;
     background: var(--outline);
     margin-top: 2rem;
+  }
+
+  .social--container {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social--link {
+    margin: 1rem;
+    color: white;
+    font-size: 1.3em;
   }
 
   @media only screen and (min-width: 600px) {

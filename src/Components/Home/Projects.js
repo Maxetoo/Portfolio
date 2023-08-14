@@ -69,7 +69,7 @@ min-height: 100vh;
   }
   .project--details {
     margin-top: 3rem;
-    font-size: 2.5em;
+    font-size: 2em;
     width: 90%;
   }
 
@@ -92,11 +92,14 @@ min-height: 100vh;
     width: 100%;
     height: auto;
     margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .selected--project {
-    width: 100%;
-    height: 300px;
+    width: 90%;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -104,7 +107,7 @@ min-height: 100vh;
     margin-top: 3rem;
     padding: 1.5rem;
     background: none;
-    /* border-radius: 5px; */
+    border-radius: 20px;
     border: solid 0.5px var(--outline);
   }
 

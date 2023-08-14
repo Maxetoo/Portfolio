@@ -53,7 +53,7 @@ const Wrapper = styled.div `
 
   .about--details {
     margin-top: 3rem;
-    font-size: 2.5em;
+    font-size: 2em;
     width: 90%;
   }
 

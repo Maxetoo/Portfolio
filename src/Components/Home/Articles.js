@@ -15,30 +15,17 @@ const Articles = () => {
         <BiBookAlt className = 'title--icon' />
         <h5 className='title'>ARTICLES</h5> 
         </div> 
-      <div className='articles-details'>
+      <div className='articles--details'>
         My <span className='colored-text'>Articles</span>
       </div>
-      <div className='article-container'>
-        {/* <div className='article'>
-          <div className='article--head'>
-            <h4>Regular Expression</h4>
-            <p className='date'>January 01, 2022</p>
-          </div>
-          <div className='article--footer'>
-            <h4 className='details'>2021 - Happier Than Ever</h4>
-            <p className='read-time'>
-              <BiBookAlt className='time-icon' />
-              19 mins read
-            </p>
-          </div>
-        </div> */}
+      <div className='article--container'>
         {articles.map((value) => {
           const { id, title, description, readTime, link, date } = value
           return (
             <div className='article' key={id}>
               <div className='article--head'>
                 <div className='head--left'>
-                  <h4>{title}</h4>
+                  <h4 className='article--title'>{title}</h4>
                   <p className='date'>{date}</p>
                 </div>
                 <Link to={link} className='article-link'>
@@ -94,7 +81,7 @@ const Wrapper = styled.div`
     color: #28e98c;
   }
 
-  .articles-details {
+  .articles--details {
     margin-top: 3rem;
     font-size: 2em;
   }
@@ -103,16 +90,17 @@ const Wrapper = styled.div`
     color: #28e98c;
   }
 
-  .article-container {
+  .article--container {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .article {
-    width: 100%;
-    height: 300px;
+    width: 90%;
+    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -120,7 +108,7 @@ const Wrapper = styled.div`
     margin-top: 3rem;
     padding: 2rem;
     background: none;
-    /* border-radius: 20px; */
+    border-radius: 20px;
     border: solid 0.5px var(--outline);
   }
 
@@ -130,6 +118,10 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .article--title {
+    font-size: 1.2em;
   }
 
   .article-link {
@@ -145,7 +137,9 @@ const Wrapper = styled.div`
 
   .details {
     margin-bottom: 1rem;
-    font-size: 1.5em;
+    font-size: 1em;
+    opacity: 0.8;
+    line-height: 1.5rem;
   }
 
   .read-time {
