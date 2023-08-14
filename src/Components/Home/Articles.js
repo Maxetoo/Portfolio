@@ -110,8 +110,16 @@ const Wrapper = styled.div`
     background: none;
     border-radius: 20px;
     border: solid 0.5px var(--outline);
-    box-shadow: 1px 1px 2px var(--outline);
+  }
 
+  .article:hover {
+    border-color: #28e98c;
+    cursor: pointer;
+    transition: .5s all;
+
+    .article-link {
+      color: #28e98c;
+    }
   }
 
   .article--head {

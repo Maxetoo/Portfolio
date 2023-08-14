@@ -40,32 +40,6 @@ const HomeProfile = () => {
           <FiArrowDownRight className='learnmore--icon' />
         </button>
       </div>
-      {/* <div className='profile-head'>
-        <h3 className='profile-name'>Maxwell.</h3>
-        <div className='menu-container'>
-          <HiMenuAlt4 />
-        </div>
-      </div>
-      <img
-        src='https://images.unsplash.com/photo-1458681407517-f6a21aad9ec9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
-        alt=''
-        className='profile'
-      />
-      <div className='profile-details'>Website Developer</div>
-      <div className='socials-container'>
-        {socials.map((value) => {
-          const { id, icon, link } = value
-          return (
-            <Link to={link} className='social-link' key={id}>
-              {icon}
-            </Link>
-          )
-        })}
-      </div>
-      <button type='button'>
-        Learn More
-        <FiArrowDownRight className='learnmore-icon' />
-      </button> */}
     </Wrapper>
   )
 }
@@ -80,7 +54,7 @@ const Wrapper = styled.div`
   .profile-container {
     height: auto;
     width: 100%;
-    border: solid 0.5px var(--outline);
+    /* border: solid 0.5px var(--outline); */
     margin-top: 1.5rem;
     border-radius: 30px;
     padding: 2rem;
@@ -123,7 +97,7 @@ const Wrapper = styled.div`
 
   .profile--img {
     height: 250px;
-    width: 60%;
+    width: 80%;
     border-radius: 10px;
     background: #000000;
     margin: 2rem;
@@ -169,6 +143,11 @@ const Wrapper = styled.div`
     margin: 0.5rem;
   }
 
+  .social--link:hover {
+    color: #28e98c;
+    border-color: #28e98c;
+  }
+
   button {
     width: 90%;
     height: 50px;
@@ -183,10 +162,18 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
 
     .learnmore--icon {
       margin-left: 0.5rem;
     }
+  }
+
+  button:hover {
+    border: solid 1px #28e98c;
+    color: #28e98c;
+    background: none;
+    transition: .5s all;
   }
 
   @media only screen and (min-width: 768px) {

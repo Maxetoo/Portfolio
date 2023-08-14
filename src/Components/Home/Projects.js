@@ -109,7 +109,12 @@ min-height: 100vh;
     background: none;
     border-radius: 20px;
     border: solid 0.5px var(--outline);
-    box-shadow: 1px 1px 2px var(--outline);
+  }
+
+  .selected--project:hover {
+    border-color: #28e98c;
+    cursor: pointer;
+    transition: .5s all;
   }
 
   .details-head {
