@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { BiBookAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
-import { articles } from '../../Data/Data'
+import { articles } from '../Data/Data'
 import { FiArrowUpRight } from 'react-icons/fi'
 // FiArrowUpRight
 

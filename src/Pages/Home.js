@@ -1,20 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-  HomeHeader,
-  HomeIntro,
+  NavMenu,
   HomeProfile,
   Introduction,
   About,
   Projects,
   Articles,
   Contact,
-} from '../Components/Home'
+} from '../Components'
+import { useSelector, useDispatch } from 'react-redux'
+import {closeNavMenu} from '../Features/eventReudcer'
 
 const Home = () => {
+  const dispatch = useDispatch()
   return (
     <Wrapper>
-      <HomeProfile />
+      <NavMenu/>
+      <HomeProfile/>
       <Introduction />
       <About />
       <Projects />

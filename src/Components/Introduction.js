@@ -1,17 +1,63 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import styled from 'styled-components'
 import { AiOutlineHome, AiOutlineArrowDown } from 'react-icons/ai'
 import { MdWorkOutline } from 'react-icons/md'
 import { SiBookmeter } from 'react-icons/si'
-import ScrollImage from '../../Assets/round-text.png'
+import ScrollImage from '../Assets/round-text.png'
+import {gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 // AiOutlineHome
 // MdWorkOutline
 // SiBookmeter
 
 const Introduction = () => {
+const start = useRef()
+
+  // useEffect(() => {
+  //   const reset = window.sc
+  //   gsap.from('.intro--desc', {
+  //     y: -10,
+  //     opacity: 0,
+  //     scrollTrigger: {
+  //       trigger: '.title--container',
+  //       start: 'top center',
+  //       end: '+=200',
+  //       // end: 'bottom',
+  //       markers: true,
+  //       toggleActions: 'play none none reset',
+  //     },
+     
+  //   })
+
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: '.intro--desc',
+  //       start: 'top center',
+  //       end: '+=50',
+  //       // end: 'bottom',
+  //       markers: true,
+  //       // toggleActions: 'play none none reset',
+  //     },
+  //   })
+  //   tl.from('.years--counter', {
+  //     x: -10,
+  //     opacity: 0,
+  //     transition: 'all'
+  //   })
+
+  //   tl.from('.projects--counter', {
+  //     x: 10,
+  //     opacity: 0,
+  //     delay: 0,
+  //   })
+    
+
+    
+  // }, []);
   return (
     <Wrapper>
-      <div className='title--container'>
+      <div className='title--container' ref={start}>
         <AiOutlineHome className='title--icon' />
         <h5 className='title'>INTRODUCTION</h5>
       </div>
@@ -116,7 +162,17 @@ const Wrapper = styled.div`
   .scroll--img {
     height: 100%;
     width: 100%;
+    animation: animName 5s linear infinite;
   }
+
+  @keyframes animName {
+ 0%{
+    transform: rotate(0deg);
+   }
+100%{
+    transform: rotate(360deg);
+   }
+}
 
   .scroll--icon {
     position: absolute;

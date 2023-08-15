@@ -1,14 +1,28 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 const initialState = {
-  loading: false,
+  navMenuOpen: true
 }
 
 const eventSlice = createSlice({
   name: 'eventSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    openNavMenu : (state, action) => {
+      state.navMenuOpen = true
+
+    },
+    closeNavMenu : (state, action) => {
+      // state.navMenuOpen = false
+      if (state.navMenuOpen) {
+        state.navMenuOpen = false
+      }
+    },
+  },
 })
 
-// export const {} = eventSlice.actions
+export const {
+  openNavMenu,
+  closeNavMenu,
+} = eventSlice.actions
 export default eventSlice.reducer

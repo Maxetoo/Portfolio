@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { BiSolidContact } from 'react-icons/bi'
 // BiSolidContact
 import { Link } from 'react-router-dom'
-import { socials } from '../../Data/Data'
+import { socials } from '../Data/Data'
 
 const Contact = () => {
   return (

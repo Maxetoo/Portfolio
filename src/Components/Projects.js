@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { AiOutlineUser, AiOutlineEye } from 'react-icons/ai'
-import { projects } from '../../Data/Data'
+import { MdWorkOutline } from 'react-icons/md'
+
+import { projects } from '../Data/Data'
 import { Link } from 'react-router-dom'
 // AiOutlineEye
 
@@ -9,7 +11,7 @@ const Projects = () => {
   return (
     <Wrapper>
       <div className = 'title--container' >
-        <AiOutlineUser className = 'title--icon' />
+        <MdWorkOutline className = 'title--icon' />
         <h5 className='title'>PROJECTS</h5> 
         </div> 
         <div className ='project--details' >

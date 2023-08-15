@@ -3,7 +3,15 @@
 // FaHashnode
 // SiHashnode
 // LuTwitter
-import { AiOutlineMail, AiOutlineGithub } from 'react-icons/ai'
+import { AiOutlineMail, AiOutlineGithub, AiOutlineHome} from 'react-icons/ai'
+import { HiMenuAlt4 } from 'react-icons/hi'
+import { AiOutlineUser } from 'react-icons/ai'
+import { BiSolidContact } from 'react-icons/bi'
+import { BiBookAlt } from 'react-icons/bi'
+import { MdWorkOutline } from 'react-icons/md'
+import { LuServer } from "react-icons/lu";
+// LuServer
+
 // import { FaHashnode } from 'react-icons/fa'
 import { SiHashnode } from 'react-icons/si'
 import { LuTwitter } from 'react-icons/lu'
@@ -102,3 +110,30 @@ export const projects = [
   },
 
 ]
+
+export const menudata = [{
+  id: 0,
+  title: 'Home',
+  icon: <AiOutlineHome/>
+}, 
+{
+  id: 1,
+  title: 'Introduction',
+  icon: <LuServer/>
+},{
+  id: 2,
+  title: 'About',
+  icon: <AiOutlineUser/>
+},{
+  id: 3,
+  title: 'Projects',
+  icon: <MdWorkOutline/>
+},{
+  id: 4,
+  title: 'Articles',
+  icon: <BiBookAlt/>
+}, {
+  id: 5,
+  title: 'Contact',
+  icon: <BiSolidContact/>
+}]
