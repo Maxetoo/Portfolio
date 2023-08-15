@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { menudata, socials} from '../Data/Data'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import {closeNavMenu} from '../Features/eventReudcer'
-
+import {closeNavMenu, scrollToSection} from '../Features/eventReudcer'
+import {sections} from '../Features/eventReudcer'
 
 const Menu = () => {
   const dispatch = useDispatch()
@@ -19,7 +19,7 @@ const Menu = () => {
         <h3>Menu</h3>
         {menudata.map((value) => {
           const {id, title, icon} = value
-          return <div className='menu--list' key={id}>
+          return <div className='menu--list' key={id} onClick={() => dispatch(scrollToSection(sections[title]))}>
               <p className="icon">{icon}</p>
               <p className="title">{title}</p>
             </div>

@@ -1,19 +1,22 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { HiMenuAlt4 } from 'react-icons/hi'
 import { socials } from '../Data/Data'
 import { Link } from 'react-router-dom'
 import { FiArrowDownRight } from 'react-icons/fi'
 import { useSelector, useDispatch } from 'react-redux'
-import {openNavMenu} from '../Features/eventReudcer'
+import {openNavMenu, sections, scrollToSection} from '../Features/eventReudcer'
+
 // FiArrowDownRight
 
 const HomeProfile = () => {
   const dispatch = useDispatch()
+  sections.Home = useRef()
+
 
   return (
     <Wrapper>
-      <div className='profile-container'>
+      <div className='profile-container' ref={sections.Home}>
         <div className='profile--head'>
           <div className='profile--name'>Maxwell.</div>
           <div className='menu--container' onClick={() => dispatch(openNavMenu())}>
@@ -43,8 +46,8 @@ const HomeProfile = () => {
             )
           })}
         </div>
-        <button type='button'>
-          Learn More
+        <button type='button' onClick={() => dispatch(scrollToSection(sections.Projects))}>
+          View Works
           <FiArrowDownRight className='learnmore--icon' />
         </button>
       </div>

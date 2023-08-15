@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 // BiBookAlt
 import { BiBookAlt } from 'react-icons/bi'
@@ -6,12 +6,15 @@ import { Link } from 'react-router-dom'
 
 import { articles } from '../Data/Data'
 import { FiArrowUpRight } from 'react-icons/fi'
+import {sections} from '../Features/eventReudcer'
+
 // FiArrowUpRight
 
 const Articles = () => {
+  sections.Articles = useRef()
   return (
     <Wrapper>
-      <div className = 'title--container' >
+      <div className = 'title--container' ref={sections.Articles} >
         <BiBookAlt className = 'title--icon' />
         <h5 className='title'>ARTICLES</h5> 
         </div> 

@@ -1,14 +1,18 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { BiSolidContact } from 'react-icons/bi'
 // BiSolidContact
 import { Link } from 'react-router-dom'
 import { socials } from '../Data/Data'
+import {sections} from '../Features/eventReudcer'
+
 
 const Contact = () => {
+  sections.Contact = useRef()
+
   return (
     <Wrapper>
-      <div className = 'title--container' >
+      <div className = 'title--container' ref={sections.Contact}>
         <BiSolidContact className = 'title--icon' />
         <h5 className='title'>CONTACT</h5> 
         </div> 

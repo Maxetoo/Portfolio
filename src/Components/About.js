@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { AiOutlineUser } from 'react-icons/ai'
+import { useSelector, useDispatch } from 'react-redux'
+import {sections} from '../Features/eventReudcer'
 
 const About = () => {
-    return ( <Wrapper >
-        <div className = 'title--container' >
+  const { navMenuOpen} = useSelector((store) => store.eventSlice)
+  sections.About = useRef()
+
+
+    return ( <Wrapper>
+        <div className = 'title--container'  ref={sections.About}>
         <AiOutlineUser className = 'title--icon' />
         <h5 className = 'title' > ABOUT </h5> 
         </div> 

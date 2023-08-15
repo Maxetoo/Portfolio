@@ -1,16 +1,20 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { AiOutlineUser, AiOutlineEye } from 'react-icons/ai'
 import { MdWorkOutline } from 'react-icons/md'
 
 import { projects } from '../Data/Data'
 import { Link } from 'react-router-dom'
+import {sections} from '../Features/eventReudcer'
+
 // AiOutlineEye
 
 const Projects = () => {
+  sections.Projects = useRef()
+
   return (
     <Wrapper>
-      <div className = 'title--container' >
+      <div className = 'title--container' ref={sections.Projects}>
         <MdWorkOutline className = 'title--icon' />
         <h5 className='title'>PROJECTS</h5> 
         </div> 

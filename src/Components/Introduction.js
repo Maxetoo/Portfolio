@@ -6,13 +6,16 @@ import { SiBookmeter } from 'react-icons/si'
 import ScrollImage from '../Assets/round-text.png'
 import {gsap} from 'gsap'
 import {ScrollTrigger} from 'gsap/ScrollTrigger'
+import {sections} from '../Features/eventReudcer'
+
 gsap.registerPlugin(ScrollTrigger)
+
 // AiOutlineHome
 // MdWorkOutline
 // SiBookmeter
 
 const Introduction = () => {
-const start = useRef()
+  sections.Introduction = useRef()
 
   // useEffect(() => {
   //   const reset = window.sc
@@ -57,7 +60,7 @@ const start = useRef()
   // }, []);
   return (
     <Wrapper>
-      <div className='title--container' ref={start}>
+      <div className='title--container' ref={sections.Introduction}>
         <AiOutlineHome className='title--icon' />
         <h5 className='title'>INTRODUCTION</h5>
       </div>
