@@ -173,7 +173,6 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
 
     .learnmore--icon {
       margin-left: 0.5rem;

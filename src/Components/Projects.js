@@ -6,29 +6,97 @@ import { MdWorkOutline } from 'react-icons/md'
 import { projects } from '../Data/Data'
 import { Link } from 'react-router-dom'
 import {sections} from '../Features/eventReudcer'
+import {useScroll, motion, useTransform} from 'framer-motion'
+
 
 // AiOutlineEye
 
 const Projects = () => {
   sections.Projects = useRef()
+  const containerRef = useRef()
+  const { scrollY } = useScroll({
+    target: containerRef
+  })
+
+  const textRevealVariant = {
+    offscreen: {
+      y: 30,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 0.5,
+        when: 'beforeChildren'
+      }
+    }
+  }
+
+
+  const containerReveal = {
+    hidden: {
+      x: -20,
+    },
+    visible: {
+      x: 0,
+      staggerChildren: 0.5,
+      transition: {
+        type: 'spring',
+        stiffness: 90
+      }
+    }
+  }
 
   return (
-    <Wrapper>
-      <div className = 'title--container' ref={sections.Projects}>
+    <Wrapper 
+    >
+      <motion.div 
+      className = 'title--container' 
+      ref={sections.Projects}
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >
         <MdWorkOutline className = 'title--icon' />
         <h5 className='title'>PROJECTS</h5> 
-        </div> 
-        <div className ='project--details' >
+        </motion.div > 
+        <motion.div 
+        className ='project--details'
+        variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+         >
         Featured { ' ' } 
         <span className = 'colored--text' > 
         Projects
         </span> 
-        </div> 
-      <div className='project--container'>
-        {projects.map((value) => {
+        </motion.div> 
+      <motion.div className='project--container'
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >
+        {projects.map((value, index) => {
           const { id, name, description, link, techUsed } = value
           return (
-            <div className='selected--project' key={id}>
+            <motion.div 
+            className='selected--project' 
+            key={id}
+            ref={containerRef}
+            variants={containerReveal}
+            initial={
+              {
+                x: index % 2 !== 0 ? 40 : -40,
+              }
+            }
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1}}
+            >
               <div className='details-head'>
                 <h3>{name}</h3>
                 <h4>{techUsed}</h4>
@@ -40,10 +108,10 @@ const Projects = () => {
                   view
                 </Link>
               </div>
-            </div>
+            </motion.div>
           )
         })}
-      </div>
+      </motion.div>
     </Wrapper>
   )
 }
@@ -55,6 +123,8 @@ min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scroll-snap-align: start;
+
 
   .title--container {
     width: auto;
@@ -105,7 +175,7 @@ min-height: 100vh;
 
   .selected--project {
     width: 90%;
-    height: 250px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

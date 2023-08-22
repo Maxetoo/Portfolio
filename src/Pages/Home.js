@@ -33,5 +33,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  scroll-snap-type: y mandatory;
+
 `
 export default Home

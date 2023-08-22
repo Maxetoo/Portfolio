@@ -4,11 +4,9 @@ import { AiOutlineHome, AiOutlineArrowDown } from 'react-icons/ai'
 import { MdWorkOutline } from 'react-icons/md'
 import { SiBookmeter } from 'react-icons/si'
 import ScrollImage from '../Assets/round-text.png'
-import {gsap} from 'gsap'
-import {ScrollTrigger} from 'gsap/ScrollTrigger'
 import {sections} from '../Features/eventReudcer'
+import {useScroll, motion} from 'framer-motion'
 
-gsap.registerPlugin(ScrollTrigger)
 
 // AiOutlineHome
 // MdWorkOutline
@@ -16,48 +14,22 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Introduction = () => {
   sections.Introduction = useRef()
+  const textRevealVariant = {
+    offscreen: {
+      y: 30,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.5
+      }
+    }
+  }
 
-  // useEffect(() => {
-  //   const reset = window.sc
-  //   gsap.from('.intro--desc', {
-  //     y: -10,
-  //     opacity: 0,
-  //     scrollTrigger: {
-  //       trigger: '.title--container',
-  //       start: 'top center',
-  //       end: '+=200',
-  //       // end: 'bottom',
-  //       markers: true,
-  //       toggleActions: 'play none none reset',
-  //     },
-     
-  //   })
-
-  //   const tl = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: '.intro--desc',
-  //       start: 'top center',
-  //       end: '+=50',
-  //       // end: 'bottom',
-  //       markers: true,
-  //       // toggleActions: 'play none none reset',
-  //     },
-  //   })
-  //   tl.from('.years--counter', {
-  //     x: -10,
-  //     opacity: 0,
-  //     transition: 'all'
-  //   })
-
-  //   tl.from('.projects--counter', {
-  //     x: 10,
-  //     opacity: 0,
-  //     delay: 0,
-  //   })
-    
-
-    
-  // }, []);
   return (
     <Wrapper>
       <div className='title--container' ref={sections.Introduction}>
@@ -68,18 +40,42 @@ const Introduction = () => {
         Hello, my name is Maxwell Etombi and I am a{' '}
         <span className='colored--text'>Web Developer</span>
       </div>
-      <p className='intro--desc'>
+      <motion.p 
+      className='intro--desc'
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+
+      >
         I bring beautiful websites to live through by essentric skills. Just
         simple like that! Over two years of experince building and creating web
         products
-      </p>
+      </motion.p>
       <div className='project-scroller--container'>
         <img src={ScrollImage} alt='' className='scroll--img' />
         <div className='scroll--icon'>
           <AiOutlineArrowDown />
         </div>
       </div>
-      <div className='profile-counter--container'>
+      <motion.div 
+      className='profile-counter--container'
+      initial={
+        {
+          y: 60,
+          opacity: 0
+        }
+      }
+      whileInView={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 1,
+          staggerChildren: 0.5
+        }
+      }}
+      viewport={{ once: false}}
+      >
         <div className='years--counter'>
           <h3 className='time colored--counter'>2+</h3>
           <p className='time--desc counter--desc'>YEARS OF EXPERIENCE</p>
@@ -88,20 +84,7 @@ const Introduction = () => {
           <h3 className='projects colored--counter'>50+</h3>
           <p className='projects--desc counter--desc'>PROJECTS COMPLETED</p>
         </div>
-      </div>
-      {/* <div className='title'>
-        <AiOutlineHome className='intro-icon' />
-        INTRODCTION
-      </div>
-      <div className='intro-details'>
-        Hello, my name is Maxwell Etombi and I am{' '}
-        <span className='colored-text'>Web Developer</span>
-      </div>
-      <p>
-        I bring beautiful websites to live through by essentric skills. Just
-        simple like that! Over two years of experince building and creating web
-        products
-      </p> */}
+      </motion.div>
     </Wrapper>
   )
 }
@@ -113,6 +96,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scroll-snap-align: start;
+
 
   .title--container {
     width: auto;
@@ -125,7 +110,7 @@ const Wrapper = styled.div`
     padding: 0.5rem;
     border-radius: 20px;
     font-size: 1em;
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .title--icon {

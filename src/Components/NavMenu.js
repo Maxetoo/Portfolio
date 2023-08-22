@@ -1,14 +1,21 @@
-import React, {useRef} from 'react'
+import React, {useRef, useEffect} from 'react'
 import styled from 'styled-components'
 import { menudata, socials} from '../Data/Data'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import {closeNavMenu, scrollToSection} from '../Features/eventReudcer'
+import {closeNavMenu, scrollToSection, setActiveSection} from '../Features/eventReudcer'
 import {sections} from '../Features/eventReudcer'
 
 const Menu = () => {
   const dispatch = useDispatch()
   const { navMenuOpen } = useSelector((store) => store.eventSlice)
+
+  useEffect(() => {
+    // dispatch(setActiveSection(Object.values(sections)))
+    const arr = []
+    const values = Object.values(sections)
+      dispatch(setActiveSection(values.current))
+  }, [navMenuOpen]);
   return (
     <Wrapper style={{
       width: `${navMenuOpen ? '100%' : '0'}`
@@ -24,7 +31,7 @@ const Menu = () => {
               <p className="title">{title}</p>
             </div>
         })}
-        <h3 className='socials'>Socials</h3>
+        {/* <h3 className='socials'>Socials</h3>
         <div className="social--container">
           {socials.map((value) => {
             const {id, icon, link, } = value
@@ -32,7 +39,7 @@ const Menu = () => {
             {icon}
           </Link>
           })}
-        </div>
+        </div> */}
       </div>
       </div>
       
@@ -61,13 +68,13 @@ const Wrapper = styled.div`
      }
 
      .blur--bg {
-      width: 30%;
+      width: 40%;
       height: 100%;
-      background: rgb(153, 153, 153, 0.2);
+      background: rgb(29, 29, 29, 0.5);
      }
 
      .menu--container {
-      width: 70%;
+      width: 60%;
       height: 100%;
       padding: 5rem;
       display: flex;
@@ -102,7 +109,7 @@ const Wrapper = styled.div`
 
      .social--container {
       margin-top: 1rem;
-      width: 70%;
+      width: 90%;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -116,7 +123,6 @@ const Wrapper = styled.div`
      .social--link {
       color: var(--outline);
       cursor: pointer;
-      font-size: 0.8em;
      }
 
      .social--link:hover {

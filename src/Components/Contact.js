@@ -5,33 +5,96 @@ import { BiSolidContact } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { socials } from '../Data/Data'
 import {sections} from '../Features/eventReudcer'
+import {useScroll, motion} from 'framer-motion'
 
 
 const Contact = () => {
   sections.Contact = useRef()
+  const textRevealVariant = {
+    offscreen: {
+      x: -10,
+      opacity: 0
+    },
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.5
+      }
+    }
+  }
+
+  const smallertextRevealVariant = {
+    offscreen: {
+      y: 30,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.5
+      }
+    }
+  }
+
 
   return (
     <Wrapper>
-      <div className = 'title--container' ref={sections.Contact}>
+      <motion.div 
+      className = 'title--container' 
+      ref={sections.Contact}
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      
+      >
         <BiSolidContact className = 'title--icon' />
         <h5 className='title'>CONTACT</h5> 
-        </div> 
-      <div className='contact-details'>
+        </motion.div> 
+      <motion.div 
+      className='contact-details'
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >
         Ready to work <span className='colored-text'>with me ?</span>
-      </div>
-      <p>SAY HELLO</p>
-      <p>maxeto@gmail.com</p>
+      </motion.div>
+      <motion.p
+      variants={smallertextRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >SAY HELLO</motion.p>
+      <motion.p 
+      variants={smallertextRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >maxeto@gmail.com</motion.p>
       {/* <div className='contact-footer'>
         
       </div> */}
-      <div className="social--container">
+      <motion.div 
+      className="social--container"
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >
       {socials.map((value) => {
           const {link, id, icon} = value
           return <Link to={link} className='social--link' key={id}>
           {icon}
         </Link>
         })}
-      </div>
+      </motion.div>
     </Wrapper>
   )
 }
@@ -43,6 +106,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scroll-snap-align: start;
+
   /* margin-top: -4rem; */
 
   .title--container {

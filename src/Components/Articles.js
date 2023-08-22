@@ -7,25 +7,81 @@ import { Link } from 'react-router-dom'
 import { articles } from '../Data/Data'
 import { FiArrowUpRight } from 'react-icons/fi'
 import {sections} from '../Features/eventReudcer'
+import {useScroll, motion } from 'framer-motion'
 
 // FiArrowUpRight
 
 const Articles = () => {
   sections.Articles = useRef()
+
+  const textRevealVariant = {
+    offscreen: {
+      y: 30,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        duration: 0.5,
+        when: 'beforeChildren'
+      }
+    }
+  }
+
+
+  const containerReveal = {
+    hidden: {
+      x: -20,
+    },
+    visible: {
+      y: 0,
+      staggerChildren: 0.5,
+      transition: {
+        type: 'spring',
+        stiffness: 90
+      }
+    }
+  }
   return (
     <Wrapper>
-      <div className = 'title--container' ref={sections.Articles} >
+      <motion.div 
+      className = 'title--container' 
+      ref={sections.Articles}
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+       >
         <BiBookAlt className = 'title--icon' />
         <h5 className='title'>ARTICLES</h5> 
-        </div> 
-      <div className='articles--details'>
+        </motion.div> 
+      <motion.div 
+      className='articles--details'
+      variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.1 }}
+      >
         My <span className='colored-text'>Articles</span>
-      </div>
+      </motion.div>
       <div className='article--container'>
-        {articles.map((value) => {
+        {articles.map((value, index) => {
           const { id, title, description, readTime, link, date } = value
           return (
-            <div className='article' key={id}>
+            <motion.div 
+            className='article' 
+            key={id}
+            variants={containerReveal}
+            initial={
+              {
+                y: 20,
+              }
+            }
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.1 }}
+            >
               <div className='article--head'>
                 <div className='head--left'>
                   <h4 className='article--title'>{title}</h4>
@@ -42,7 +98,7 @@ const Articles = () => {
                   {readTime}
                 </p>
               </div>
-            </div>
+            </motion.div>
           )
         })}
       </div>
@@ -57,6 +113,8 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scroll-snap-align: start;
+
   /* margin-top: -4rem; */
 
   .title--container {

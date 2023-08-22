@@ -19,6 +19,8 @@ const eventSlice = createSlice({
   reducers: {
     openNavMenu : (state, action) => {
       state.navMenuOpen = true
+      // let secs = Array.from(action.payload)
+      // console.log(secs);
 
     },
     closeNavMenu : (state, action) => {
@@ -32,6 +34,16 @@ const eventSlice = createSlice({
         behavior: 'smooth',
       })
       state.navMenuOpen = false
+    },
+
+    setActiveSection: (state, action) => {
+      // for (const [key, value] of action.payload) {
+      //     console.log(value);
+      // }
+      // let arr = Object.values(action.payload)
+      // console.log(arr);
+
+      console.log(action.payload);
     }
   
   },
@@ -40,6 +52,7 @@ const eventSlice = createSlice({
 export const {
   openNavMenu,
   closeNavMenu,
-  scrollToSection
+  scrollToSection,
+  setActiveSection
 } = eventSlice.actions
 export default eventSlice.reducer

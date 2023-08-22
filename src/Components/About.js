@@ -3,10 +3,29 @@ import styled from 'styled-components'
 import { AiOutlineUser } from 'react-icons/ai'
 import { useSelector, useDispatch } from 'react-redux'
 import {sections} from '../Features/eventReudcer'
+import {useScroll, motion} from 'framer-motion'
+
 
 const About = () => {
   const { navMenuOpen} = useSelector((store) => store.eventSlice)
   sections.About = useRef()
+
+  const textRevealVariant = {
+    offscreen: {
+      y: 30,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.5
+      }
+    }
+  }
+
 
 
     return ( <Wrapper>
@@ -14,19 +33,31 @@ const About = () => {
         <AiOutlineUser className = 'title--icon' />
         <h5 className = 'title' > ABOUT </h5> 
         </div> 
-        <div className = 'about--details' >
+        <motion.div 
+        className = 'about--details'
+        variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false}}
+         >
         Every great design begin with an even { ' ' } 
         <span className = 'colored--text' > 
         better story 
         </span> 
-        </div> 
-        <p className = 'about--desc' >
+        </motion.div> 
+        <motion.p 
+        className = 'about--desc'
+        variants={textRevealVariant}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false}}
+         >
         Since beginning my journey as a freelance designer nearly 8 years ago,
         I 've done remote work for agencies, consulted for startups, and
         collaborated with talented people to create digital products
         for both business and consumer use.I 'm quietly confident, naturally curious, and
         perpetually working on improving my chopsone design problem at a time. 
-        </p> 
+        </motion.p> 
         </Wrapper>
     )
 }
@@ -38,6 +69,8 @@ const Wrapper = styled.div `
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  scroll-snap-align: start;
+
 
   .title--container {
     width: auto;
