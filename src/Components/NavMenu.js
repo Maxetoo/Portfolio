@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import {closeNavMenu, scrollToSection, setActiveSection} from '../Features/eventReudcer'
 import {sections} from '../Features/eventReudcer'
+import {useScroll, motion } from 'framer-motion'
+
 
 const Menu = () => {
   const dispatch = useDispatch()
@@ -26,10 +28,13 @@ const Menu = () => {
         <h3>Menu</h3>
         {menudata.map((value) => {
           const {id, title, icon} = value
-          return <div className='menu--list' key={id} onClick={() => dispatch(scrollToSection(sections[title]))}>
+          return <motion.div 
+          className='menu--list' 
+          key={id}           
+          onClick={() => dispatch(scrollToSection(sections[title]))}>
               <p className="icon">{icon}</p>
               <p className="title">{title}</p>
-            </div>
+            </motion.div>
         })}
         {/* <h3 className='socials'>Socials</h3>
         <div className="social--container">
@@ -68,13 +73,13 @@ const Wrapper = styled.div`
      }
 
      .blur--bg {
-      width: 40%;
+      width: 30%;
       height: 100%;
       background: rgb(29, 29, 29, 0.5);
      }
 
      .menu--container {
-      width: 60%;
+      width: 70%;
       height: 100%;
       padding: 5rem;
       display: flex;

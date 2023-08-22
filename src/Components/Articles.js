@@ -40,7 +40,7 @@ const Articles = () => {
       staggerChildren: 0.5,
       transition: {
         type: 'spring',
-        stiffness: 90
+        stiffness: 100
       }
     }
   }

@@ -5,7 +5,10 @@ import { MdWorkOutline } from 'react-icons/md'
 import { SiBookmeter } from 'react-icons/si'
 import ScrollImage from '../Assets/round-text.png'
 import {sections} from '../Features/eventReudcer'
+import { useSelector, useDispatch } from 'react-redux'
 import {useScroll, motion} from 'framer-motion'
+import {scrollToSection} from '../Features/eventReudcer'
+
 
 
 // AiOutlineHome
@@ -14,6 +17,7 @@ import {useScroll, motion} from 'framer-motion'
 
 const Introduction = () => {
   sections.Introduction = useRef()
+  const dispatch = useDispatch()
   const textRevealVariant = {
     offscreen: {
       y: 30,
@@ -52,7 +56,7 @@ const Introduction = () => {
         simple like that! Over two years of experince building and creating web
         products
       </motion.p>
-      <div className='project-scroller--container'>
+      <div className='project-scroller--container' onClick={() => dispatch(scrollToSection(sections.Projects))}>
         <img src={ScrollImage} alt='' className='scroll--img' />
         <div className='scroll--icon'>
           <AiOutlineArrowDown />

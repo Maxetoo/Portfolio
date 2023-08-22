@@ -37,14 +37,14 @@ const Projects = () => {
 
   const containerReveal = {
     hidden: {
-      x: -20,
+      y: 20,
     },
     visible: {
-      x: 0,
+      y: 0,
       staggerChildren: 0.5,
       transition: {
         type: 'spring',
-        stiffness: 90
+        stiffness: 100
       }
     }
   }
@@ -89,11 +89,7 @@ const Projects = () => {
             key={id}
             ref={containerRef}
             variants={containerReveal}
-            initial={
-              {
-                x: index % 2 !== 0 ? 40 : -40,
-              }
-            }
+            initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.1}}
             >
