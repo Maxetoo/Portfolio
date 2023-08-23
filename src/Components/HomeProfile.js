@@ -23,11 +23,6 @@ const HomeProfile = () => {
             <HiMenuAlt4 />
           </div>
         </div>
-        {/* <img
-          src='https://images.unsplash.com/photo-1458681407517-f6a21aad9ec9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwYW5kJTIwd2hpdGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60'
-          alt='profile'
-          className='profile--img'
-        /> */}
         <img
           src='https://cdn.dribbble.com/userupload/6385587/file/original-5a2c33f1b9dff537e9d6e30e51311b23.png?crop=0x0-3201x2401&resize=640x480&vertical=center'
           alt='profile'
@@ -65,7 +60,7 @@ const Wrapper = styled.div`
   .profile-container {
     height: auto;
     width: 100%;
-    border: solid 0.5px var(--outline);
+    border: solid 2px var(--outline);
     margin-top: 1.5rem;
     border-radius: 30px;
     padding: 2rem;
@@ -100,7 +95,6 @@ const Wrapper = styled.div`
     border-radius: 50%;
     background: #181818;
     border: solid 1px var(--outline);
-    /* color: var(--outline); */
     color: #ffff;
     font-size: 1.5em;
     cursor: pointer;
@@ -155,8 +149,8 @@ const Wrapper = styled.div`
   }
 
   .social--link:hover {
-    color: #28e98c;
-    border-color: #28e98c;
+    color: var(--primary);
+    border-color: var(--primary);
   }
 
   button {
@@ -166,7 +160,7 @@ const Wrapper = styled.div`
     border-radius: 20px;
     margin-top: 1.5rem;
     cursor: pointer;
-    background: #28e98c;
+    background: var(--primary);
     color: #000000;
     font-size: 1.1em;
     display: flex;
@@ -180,25 +174,47 @@ const Wrapper = styled.div`
   }
 
   button:hover {
-    border: solid 1px #28e98c;
-    color: #28e98c;
+    border: solid 1px var(--primary);
+    color: var(--primary);
     background: none;
     transition: .5s all;
   }
 
   @media only screen and (min-width: 768px) {
-    max-width: 90vw;
-    border: solid 0.5px var(--outline);
-    margin: 1rem;
+    .profile-container {
+      width: 75vw;
+    }
+
+    .menu--container {
+      top: 10%;
+      left: 90%;
+    }
   }
 
   @media only screen and (min-width: 992px) {
-    width: 60%;
+    .profile-container {
+      width: 70vw;
+    }
 
-    .menu-container {
-      left: 85%;
+   
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 100%;
+    height: 100%;
+
+    .profile-container {
+      width: 100%;
+      height: 90%;
+    }
+
+    .menu--container {
+      top: 10%;
+      left: 90%;
     }
   }
+    
+  
 `
 
 export default HomeProfile

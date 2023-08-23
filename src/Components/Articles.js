@@ -115,11 +115,11 @@ const Wrapper = styled.div`
   align-items: flex-start;
   scroll-snap-align: start;
 
-  /* margin-top: -4rem; */
 
   .title--container {
     width: auto;
-    border: solid 1px var(--outline);
+    /* border: solid 1px var(--outline); */
+    border: solid 3px var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -139,7 +139,7 @@ const Wrapper = styled.div`
 
   .articles-icon {
     margin-right: 1rem;
-    color: #28e98c;
+    color: var(--primary)
   }
 
   .articles--details {
@@ -148,7 +148,7 @@ const Wrapper = styled.div`
   }
 
   .colored-text {
-    color: #28e98c;
+    color: var(--primary)
   }
 
   .article--container {
@@ -170,16 +170,17 @@ const Wrapper = styled.div`
     padding: 2rem;
     background: none;
     border-radius: 20px;
-    border: solid 0.5px var(--outline);
+    /* border: solid 0.5px var(--outline); */
+    border: solid 3px var(--outline)
   }
 
   .article:hover {
-    border-color: #28e98c;
+    border-color: var(--primary);
     cursor: pointer;
     transition: .5s all;
 
     .article-link {
-      color: #28e98c;
+      color: var(--primary);
     }
   }
 
@@ -223,58 +224,46 @@ const Wrapper = styled.div`
 
   .time-icon {
     margin-right: 0.5rem;
-    color: #28e98c;
+    color: var(--primary);
   }
 
   @media only screen and (min-width: 600px) {
-    /* margin-top: 3rem;
-
-    .title {
-      width: 30%;
-    }
-
-    .articles-details {
-      font-size: 2.5em;
-      margin-top: 5rem;
-      line-height: 3rem;
-    }
-
-    .article-container {
-      margin-top: 2rem;
-    } */
-
      
     margin-top: 3rem;
 
-.title--container {
-  width: 30%;
-}
+    .title--container {
+      width: 30%;
+    }
 
-.article--details {
-font-size: 2.5em;
-}
+    .article--details {
+    font-size: 2.5em;
+    }
+
+    .article--container {
+      display: grid;
+    grid-template-columns: auto auto;
+    }
+
+    .article {
+      height: 300px;
+    }
 
 
   }
 
   @media only screen and (min-width: 768px) {
-    margin-top: 3rem;
-
-    .title {
-      width: 20%;
-    }
-    p {
-      line-height: 2rem;
-    }
+    width: 90vw;
   }
 
   @media only screen and (min-width: 992px) {
-    width: 60%;
+    width: 70vw;
+  }
 
-    .title {
-      width: 25%;
-      margin-top: 5rem;
-    }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 35%;
+    padding: 0px 10px;
+    width: 55vw;
+    
   }
 `
 export default Articles

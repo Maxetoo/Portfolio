@@ -1,5 +1,12 @@
 :root {
-  --bgcolor: #1f1f1f;
-  --default-font-color: #ffffff;
-  --outline: #999999;
+    /* --bgcolor: #1f1f1f; */
+    --bgcolor: #fef6e4;
+    /* --default-font-color: #ffffff; */
+    --default-font-color: black;
+    /* --default-font-color: #fef6e4; */
+    --outline: #999999;
+    /* --primary: #28e98c; */
+    /* --primary: #fef6e4; */
+    --primary: #0bc5ea;
+    --border-line: 1.5px;
 }

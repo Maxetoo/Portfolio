@@ -56,11 +56,13 @@ const Introduction = () => {
         simple like that! Over two years of experince building and creating web
         products
       </motion.p>
-      <div className='project-scroller--container' onClick={() => dispatch(scrollToSection(sections.Projects))}>
+      <div className="scroller-main--container">
+        <div className='project-scroller--container' onClick={() => dispatch(scrollToSection(sections.Projects))}>
         <img src={ScrollImage} alt='' className='scroll--img' />
         <div className='scroll--icon'>
           <AiOutlineArrowDown />
         </div>
+      </div>
       </div>
       <motion.div 
       className='profile-counter--container'
@@ -105,7 +107,7 @@ const Wrapper = styled.div`
 
   .title--container {
     width: auto;
-    border: solid 1px var(--outline);
+    border: solid 3px var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -128,7 +130,7 @@ const Wrapper = styled.div`
   }
 
   .colored--text {
-    color: #28e98c;
+    color: var(--primary);
   }
 
   .intro--desc {
@@ -149,6 +151,7 @@ const Wrapper = styled.div`
     position: relative;
     display: grid;
     place-content: center;
+    background: black;
   }
 
   .scroll--img {
@@ -173,6 +176,7 @@ const Wrapper = styled.div`
     font-size: 2em;
     top: 40%;
     left: 40%;
+    color: white;
   }
 
   .profile-counter--container {
@@ -189,7 +193,7 @@ const Wrapper = styled.div`
   }
 
   .colored--counter {
-    color: #28e98c;
+    color: var(--primary);
     font-size: 2.5em;
     margin-bottom: 1rem;
   }
@@ -214,43 +218,35 @@ font-size: 2.5em;
   }
 
   @media only screen and (min-width: 768px) {
-    margin-top: 3rem;
+    width: 90vw;
 
-    .title {
-      width: 20%;
-    }
     .intro-details {
-      width: 80%;
       font-size: 3em;
-      margin-top: 5rem;
-      line-height: 3rem;
+      
     }
 
-    p {
-      line-height: 2rem;
+    .scroller-main--container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
     }
 
-    .experince-meter {
-      height: 120px;
+    .projects--counter {
+      margin-right: 5rem;
     }
-
-    .projects-done {
-      height: 120px;
-    }
+   
   }
 
   @media only screen and (min-width: 992px) {
-    width: 60%;
+    width: 70vw;
+  }
 
-    .title {
-      width: 25%;
-    }
-    .intro-details {
-      width: 80%;
-      font-size: 3.5em;
-      margin-top: 5rem;
-      line-height: 3.5rem;
-    }
+  @media only screen and (min-width: 1200px) {
+    margin-left: 35%;
+    padding: 0px 10px;
+    width: 55vw;
   }
 `
 

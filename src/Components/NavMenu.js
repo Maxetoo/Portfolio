@@ -86,7 +86,7 @@ const Wrapper = styled.div`
       flex-direction: column;
       align-items: flex-start;
       color: var(--outline);
-      background: #191919;
+      background: #111;
       /* background: #111;  */
 
      }
@@ -105,7 +105,7 @@ const Wrapper = styled.div`
      }
 
      .menu--list:hover {
-      color: #28e98c;
+      color: var(--primary);
      }
 
      .icon {
@@ -131,8 +131,30 @@ const Wrapper = styled.div`
      }
 
      .social--link:hover {
-      color: #28e98c;
+      color: var(--primary);
 
+     }
+
+     @media only screen and (min-width: 768px) {
+      .blur--bg {
+      width: 70%;
+     }
+
+     .menu--container {
+      width: 30%;
+
+     }
+     }
+
+     @media only screen and (min-width: 1200px) {
+      .blur--bg {
+      width: 70%;
+     }
+
+     .menu--container {
+      width: 30%;
+
+     }
      }
 `
 export default Menu
