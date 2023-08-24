@@ -111,7 +111,7 @@ const Wrapper = styled.div`
 
   .title--container {
     /* border: solid 1px var(--outline); */
-    border: solid 3px var(--outline);
+    border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;

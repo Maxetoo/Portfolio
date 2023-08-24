@@ -119,7 +119,7 @@ const Wrapper = styled.div`
   .title--container {
     width: auto;
     /* border: solid 1px var(--outline); */
-    border: solid 3px var(--outline);
+    border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -170,8 +170,7 @@ const Wrapper = styled.div`
     padding: 2rem;
     background: none;
     border-radius: 20px;
-    /* border: solid 0.5px var(--outline); */
-    border: solid 3px var(--outline)
+    border: solid var(--secondary-border) var(--outline)
   }
 
   .article:hover {

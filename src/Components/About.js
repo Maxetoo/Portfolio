@@ -21,7 +21,7 @@ const About = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.5
+        duration: 2
       }
     }
   }
@@ -74,7 +74,7 @@ const Wrapper = styled.div `
 
   .title--container {
     width: auto;
-    border: solid 3px var(--outline);
+    border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;

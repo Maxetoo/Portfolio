@@ -41,10 +41,11 @@ const Projects = () => {
     },
     visible: {
       y: 0,
-      staggerChildren: 0.5,
+      staggerChildren: 2,
       transition: {
         type: 'spring',
-        stiffness: 100
+        stiffness: 100,
+        duration: 2
       }
     }
   }
@@ -124,7 +125,7 @@ min-height: 100vh;
 
   .title--container {
     width: auto;
-    border: solid 3px var(--outline);
+    border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -180,8 +181,7 @@ min-height: 100vh;
     padding: 1.5rem;
     background: none;
     border-radius: 20px;
-    /* border: solid 0.5px var(--outline); */
-    border: solid 3px var(--outline)
+    border: solid var(--secondary-border) var(--outline)
   }
 
   .selected--project:hover {

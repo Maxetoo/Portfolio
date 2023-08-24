@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom'
 import { FiArrowDownRight } from 'react-icons/fi'
 import { useSelector, useDispatch } from 'react-redux'
 import {openNavMenu, sections, scrollToSection} from '../Features/eventReudcer'
+import { AiFillSetting } from "react-icons/ai";
+import ProfileImg from '../Assets/Maxwell.jpg'
 
 // FiArrowDownRight
+// AiFillSetting
 
 const HomeProfile = () => {
   const dispatch = useDispatch()
@@ -22,9 +25,14 @@ const HomeProfile = () => {
           <div className='menu--container' onClick={() => dispatch(openNavMenu())}>
             <HiMenuAlt4 />
           </div>
+          {/* <div className="theme-settings">
+          <AiFillSetting/>
+
+          </div> */}
         </div>
         <img
-          src='https://cdn.dribbble.com/userupload/6385587/file/original-5a2c33f1b9dff537e9d6e30e51311b23.png?crop=0x0-3201x2401&resize=640x480&vertical=center'
+          // src='https://cdn.dribbble.com/userupload/6385587/file/original-5a2c33f1b9dff537e9d6e30e51311b23.png?crop=0x0-3201x2401&resize=640x480&vertical=center'
+          src={ProfileImg}
           alt='profile'
           className='profile--img'/>
         <div className='profile--info'>
@@ -60,7 +68,7 @@ const Wrapper = styled.div`
   .profile-container {
     height: auto;
     width: 100%;
-    border: solid 2px var(--outline);
+    border: solid var(--home-profile-border) var(--outline);
     margin-top: 1.5rem;
     border-radius: 30px;
     padding: 2rem;
@@ -107,6 +115,7 @@ const Wrapper = styled.div`
     background: #000000;
     margin: 2rem;
     object-fit: cover;
+    object-position: calc(bottom - 1rem);
   }
 
   .profile--info {
@@ -137,7 +146,7 @@ const Wrapper = styled.div`
   }
 
   .social--link {
-    border: solid 2px var(--outline);
+    border: solid 1.5px var(--outline);
     color: var(--outline);
     text-decoration: none;
     height: 50px;

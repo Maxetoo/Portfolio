@@ -107,7 +107,7 @@ const Wrapper = styled.div`
 
   .title--container {
     width: auto;
-    border: solid 3px var(--outline);
+    border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -151,7 +151,7 @@ const Wrapper = styled.div`
     position: relative;
     display: grid;
     place-content: center;
-    background: black;
+    background: var(--project-scrollbg);
   }
 
   .scroll--img {
@@ -176,7 +176,7 @@ const Wrapper = styled.div`
     font-size: 2em;
     top: 40%;
     left: 40%;
-    color: white;
+    color: var(--default-font-color);
   }
 
   .profile-counter--container {
