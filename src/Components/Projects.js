@@ -186,10 +186,19 @@ min-height: 100vh;
   }
 
   .selected--project:hover {
-    border-color: var(--primary);
-    cursor: pointer;
     transition: .5s all;
+    background: var(--primary);
+    color: var(--bgcolor);
+
+    .project-link {
+      text-decoration: underline;
+    }
+
+    .project-view {
+      color: var(--outline);
+    }
   }
+
 
   .details-head {
     width: 100%;

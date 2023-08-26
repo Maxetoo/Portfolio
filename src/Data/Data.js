@@ -22,7 +22,7 @@ export const socials = [
   {
     id: 0,
     icon: <AiOutlineMail />,
-    link: 'mailto: etombimaxwell@gmail.com',
+    link: 'mailto: etombimaxwell123@gmail.com',
   },
   {
     id: 1,

@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import styled from 'styled-components'
 import { BiSolidContact } from 'react-icons/bi'
 // BiSolidContact
-import { Link } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import { socials } from '../Data/Data'
 import {sections} from '../Features/eventReudcer'
 import {useScroll, motion} from 'framer-motion'
@@ -10,6 +10,7 @@ import {useScroll, motion} from 'framer-motion'
 
 const Contact = () => {
   sections.Contact = useRef()
+  const navigate = useNavigate()
   const textRevealVariant = {
     offscreen: {
       x: -10,
@@ -72,15 +73,16 @@ const Contact = () => {
       whileInView="onscreen"
       viewport={{ once: false, amount: 0.1 }}
       >SAY HELLO</motion.p>
+      <a href="mailto: etombimaxwell123@gmail.com" className='p-mail'>
       <motion.p 
       variants={smallertextRevealVariant}
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: false, amount: 0.1 }}
-      >maxeto@gmail.com</motion.p>
-      {/* <div className='contact-footer'>
-        
-      </div> */}
+      className='p-mail'
+      >etombimaxwell123@gmail.com</motion.p>
+      </a>
+      
       <motion.div 
       className="social--container"
       variants={textRevealVariant}
@@ -165,9 +167,17 @@ const Wrapper = styled.div`
 
   .social--link {
     margin: 1rem;
-    /* color: white; */
     color: var(--default-font-color);
     font-size: 1.3em;
+  }
+
+  .p-mail {
+    color: var(--outline);
+    text-decoration: none;
+  }
+
+  .p-mail:hover {
+    text-decoration: underline;
   }
 
   @media only screen and (min-width: 600px) {

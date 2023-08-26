@@ -174,15 +174,6 @@ const Wrapper = styled.div`
     border: solid var(--secondary-border) var(--outline);
   }
 
-  .article:hover {
-    border-color: var(--primary);
-    cursor: pointer;
-    transition: .5s all;
-
-    .article-link {
-      color: var(--primary);
-    }
-  }
 
   .article--head {
     width: 100%;
@@ -198,7 +189,21 @@ const Wrapper = styled.div`
 
   .article-link {
     font-size: 2em;
-    color: #ffffff;
+    color: var(--primary);
+  }
+
+  .article:hover {
+    transition: .5s all;
+    background: var(--primary);
+    color: var(--bgcolor);
+
+    .article-link {
+      color: var(--outline);
+    }
+
+    .time-icon {
+      color: var(--outline);
+    }
   }
 
   .date {

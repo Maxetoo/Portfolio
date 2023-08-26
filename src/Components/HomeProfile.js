@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import { FiArrowDownRight } from 'react-icons/fi'
 import { useSelector, useDispatch } from 'react-redux'
 import {openNavMenu, sections, scrollToSection} from '../Features/eventReudcer'
-import { AiFillSetting } from "react-icons/ai";
 import ProfileImg from '../Assets/Maxwell.jpg'
 
 // FiArrowDownRight
@@ -25,18 +24,16 @@ const HomeProfile = () => {
           <div className='menu--container' onClick={() => dispatch(openNavMenu())}>
             <HiMenuAlt4 />
           </div>
-          {/* <div className="theme-settings">
-          <AiFillSetting/>
-
-          </div> */}
         </div>
         <img
-          // src='https://cdn.dribbble.com/userupload/6385587/file/original-5a2c33f1b9dff537e9d6e30e51311b23.png?crop=0x0-3201x2401&resize=640x480&vertical=center'
           src={ProfileImg}
           alt='profile'
           className='profile--img'/>
         <div className='profile--info'>
-          <h4 className='profile--email'>etombimaxwell@gmail.com</h4>
+          <a href="mailto:etombimaxwell123@gmail.com" className='mail-link'>
+          <h4 className='profile--email'>etombimaxwell123@gmail.com</h4>
+          </a>
+          
           <h4 className='profile--title'>Website Developer</h4>
         </div>
         <div className='social--container'>
@@ -116,6 +113,7 @@ const Wrapper = styled.div`
     margin: 2rem;
     object-fit: cover;
     object-position: calc(bottom - 1rem);
+    border: solid 1px var(--outline);
   }
 
   .profile--info {
@@ -124,6 +122,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .mail-link {
+    color: var(--outline);
+    text-decoration: none;
   }
 
   .profile--email {
@@ -176,6 +179,7 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border: solid 1px var(--outline);
 
     .learnmore--icon {
       margin-left: 0.5rem;

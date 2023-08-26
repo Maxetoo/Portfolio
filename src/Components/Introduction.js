@@ -52,9 +52,7 @@ const Introduction = () => {
       viewport={{ once: false, amount: 0.1 }}
 
       >
-        I bring beautiful websites to live through by essentric skills. Just
-        simple like that! Over two years of experince building and creating web
-        products
+        For the past two years, my focus and expertise have revolved around the creation and realization of visually stunning websites and web apllications.
       </motion.p>
       <div className="scroller-main--container">
         <div className='project-scroller--container' onClick={() => dispatch(scrollToSection(sections.Projects))}>
@@ -176,7 +174,7 @@ const Wrapper = styled.div`
     font-size: 2em;
     top: 40%;
     left: 40%;
-    color: var(--default-font-color);
+    color: #ffff;
   }
 
   .profile-counter--container {

@@ -85,7 +85,7 @@ const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      color: var(--outline);
+      color: var(--bgcolor);
       background: #111;
       /* background: #111;  */
 
@@ -102,6 +102,7 @@ const Wrapper = styled.div`
         align-items: center;
         margin-top: 2rem;
         cursor: pointer;
+        opacity: 0.8;
      }
 
      .menu--list:hover {

@@ -40,9 +40,9 @@ const About = () => {
       whileInView="onscreen"
       viewport={{ once: false}}
          >
-        Every great design begin with an even { ' ' } 
+        My Evolution of { ' ' } 
         <span className = 'colored--text' > 
-        better story 
+        Expertise
         </span> 
         </motion.div> 
         <motion.p 
@@ -52,11 +52,7 @@ const About = () => {
       whileInView="onscreen"
       viewport={{ once: false}}
          >
-        Since beginning my journey as a freelance designer nearly 8 years ago,
-        I 've done remote work for agencies, consulted for startups, and
-        collaborated with talented people to create digital products
-        for both business and consumer use.I 'm quietly confident, naturally curious, and
-        perpetually working on improving my chopsone design problem at a time. 
+          Throughout my years as a web developer, i have immersed myself in intricate projects that have not only cultivated my patience but have also propelled me towards a heightened level of developer proficiency. My pursuit of knowledge has been self-directed, encompassing completion of diverse online courses, including but not limited to FreeCodeCamp, Coding Addict and Programming with Mosh. Additionally, I have extensively engaged with technical articles, both as a reader and a writer. In the forthcoming years, my aspiration is to continue evolving into an even more accomplished professional, with the ultimate objective of contributing my skills within prominent organizations like Google, Microsoft e.t.c.
         </motion.p> 
         </Wrapper>
     )
