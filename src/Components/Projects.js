@@ -7,6 +7,7 @@ import { projects } from '../Data/Data'
 import { Link } from 'react-router-dom'
 import {sections} from '../Features/eventReudcer'
 import {useScroll, motion, useTransform} from 'framer-motion'
+import Wave from '../Assets/wave.svg'
 
 
 // AiOutlineEye
@@ -178,10 +179,10 @@ min-height: 100vh;
     justify-content: space-between;
     align-items: flex-start;
     margin-top: 3rem;
-    padding: 1.5rem;
+    padding: 2rem;
     background: none;
-    border-radius: 20px;
-    border: solid var(--secondary-border) var(--outline)
+    border-radius: 2rem;
+    border: solid var(--secondary-border) var(--outline);
   }
 
   .selected--project:hover {
@@ -217,6 +218,8 @@ min-height: 100vh;
     margin-right: 0.5rem;
     color: var(--primary);
   }
+
+  
 
   @media only screen and (min-width: 600px) {
     

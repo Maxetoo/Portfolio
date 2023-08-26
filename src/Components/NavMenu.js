@@ -36,12 +36,12 @@ const Menu = () => {
               <p className="title">{title}</p>
             </motion.div>
         })}
-        {/* <h3 className='socials'>Socials</h3>
+        {/* <h3 className='socials'>Change Theme</h3>
         <div className="social--container">
           {socials.map((value) => {
             const {id, icon, link, } = value
             return <Link to={link} className='social--link' key={id}>
-            {icon}
+            i
           </Link>
           })}
         </div> */}
@@ -128,6 +128,7 @@ const Wrapper = styled.div`
      .social--link {
       color: var(--outline);
       cursor: pointer;
+      
      }
 
      .social--link:hover {

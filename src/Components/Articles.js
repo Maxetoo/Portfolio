@@ -169,8 +169,9 @@ const Wrapper = styled.div`
     margin-top: 3rem;
     padding: 2rem;
     background: none;
-    border-radius: 20px;
-    border: solid var(--secondary-border) var(--outline)
+    /* border-radius: 20px; */
+    border-radius: 2rem;
+    border: solid var(--secondary-border) var(--outline);
   }
 
   .article:hover {
