@@ -4,7 +4,7 @@ import { HiMenuAlt4 } from 'react-icons/hi'
 import { socials } from '../Data/Data'
 import { Link } from 'react-router-dom'
 import { FiArrowDownRight } from 'react-icons/fi'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {openNavMenu, sections, scrollToSection} from '../Features/eventReudcer'
 import ProfileImg from '../Assets/Maxwell.jpg'
 
@@ -25,10 +25,10 @@ const HomeProfile = () => {
             <HiMenuAlt4 />
           </div>
         </div>
-        <img
-          src={ProfileImg}
+        <img src={ProfileImg}
           alt='profile'
           className='profile--img'/>
+          
         <div className='profile--info'>
           <a href="mailto:etombimaxwell123@gmail.com" className='mail-link'>
           <h4 className='profile--email'>etombimaxwell123@gmail.com</h4>
@@ -57,7 +57,7 @@ const HomeProfile = () => {
 
 const Wrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,6 +68,9 @@ const Wrapper = styled.div`
     border: solid var(--home-profile-border) var(--outline);
     margin-top: 1.5rem;
     border-radius: 30px;
+    background: var(--containerbg);
+    /* border-left: solid 1.5px var(--primary);
+    border-top: solid 1.5px var(--primary); */
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -114,6 +117,7 @@ const Wrapper = styled.div`
     object-fit: cover;
     object-position: calc(bottom - 1rem);
     border: solid 1px var(--outline);
+    background-image: url('../Assets/Maxwell.jpg');
   }
 
   .profile--info {
@@ -149,7 +153,7 @@ const Wrapper = styled.div`
   }
 
   .social--link {
-    border: solid 1.5px var(--outline);
+    border: solid 1px var(--outline);
     color: var(--outline);
     text-decoration: none;
     height: 50px;
@@ -179,7 +183,6 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    border: solid 1px var(--outline);
 
     .learnmore--icon {
       margin-left: 0.5rem;
@@ -208,6 +211,10 @@ const Wrapper = styled.div`
     .profile-container {
       width: 70vw;
     }
+    .profile--img {
+    height: 220px;
+    }
+    
 
    
   }

@@ -5,12 +5,11 @@ import { BiSolidContact } from 'react-icons/bi'
 import { Link, useNavigate} from 'react-router-dom'
 import { socials } from '../Data/Data'
 import {sections} from '../Features/eventReudcer'
-import {useScroll, motion} from 'framer-motion'
+import {motion} from 'framer-motion'
 
 
 const Contact = () => {
   sections.Contact = useRef()
-  const navigate = useNavigate()
   const textRevealVariant = {
     offscreen: {
       x: -10,
@@ -112,7 +111,6 @@ const Wrapper = styled.div`
 
 
   .title--container {
-    /* border: solid 1px var(--outline); */
     border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;

@@ -60,7 +60,7 @@ const About = () => {
 
 const Wrapper = styled.div `
   width: 100vw;
-  max-height: 100vh;
+  height: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -79,7 +79,7 @@ const Wrapper = styled.div `
     padding: 0.5rem;
     border-radius: 20px;
     font-size: 1em;
-    margin-top: 4rem;
+    margin-top: 3rem;
   }
 
   .title--icon {

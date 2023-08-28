@@ -1,15 +1,12 @@
 import React, {useRef} from 'react'
 import styled from 'styled-components'
-// BiBookAlt
 import { BiBookAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
-
 import { articles } from '../Data/Data'
 import { FiArrowUpRight } from 'react-icons/fi'
 import {sections} from '../Features/eventReudcer'
-import {useScroll, motion } from 'framer-motion'
+import {motion } from 'framer-motion'
 
-// FiArrowUpRight
 
 const Articles = () => {
   sections.Articles = useRef()
@@ -118,7 +115,6 @@ const Wrapper = styled.div`
 
   .title--container {
     width: auto;
-    /* border: solid 1px var(--outline); */
     border: solid var(--section-label-border) var(--outline);
     width: 50%;
     display: flex;
@@ -168,10 +164,9 @@ const Wrapper = styled.div`
     align-items: flex-start;
     margin-top: 3rem;
     padding: 2rem;
-    background: none;
+    background: var(--containerbg);
+    border: solid 1px var(--containerbg);
     /* border-radius: 20px; */
-    border-radius: 2rem;
-    border: solid var(--secondary-border) var(--outline);
   }
 
 
@@ -194,16 +189,7 @@ const Wrapper = styled.div`
 
   .article:hover {
     transition: .5s all;
-    background: var(--primary);
-    color: var(--bgcolor);
-
-    .article-link {
-      color: var(--outline);
-    }
-
-    .time-icon {
-      color: var(--outline);
-    }
+    border-bottom: solid 1.5px var(--primary);
   }
 
   .date {

@@ -11,16 +11,11 @@
 
 body {
     -webkit-tap-highlight-color: transparent;
-    /* font-family: 'Varela Round', sans-serif; */
-    /* font-family: 'Inter', sans-serif; */
     font-family: 'Bricolage Grotesque', sans-serif;
     background: var(--bgcolor);
     color: var(--default-font-color);
 }
 
 button {
-    /* font-family: 'Varela Round', sans-serif;
-   */
-    /* font-family: 'Inter', sans-serif; */
     font-family: 'Bricolage Grotesque', sans-serif;
 }

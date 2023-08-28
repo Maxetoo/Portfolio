@@ -1,11 +1,10 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import { menudata, socials} from '../Data/Data'
-import { Link } from 'react-router-dom'
+import { menudata } from '../Data/Data'
 import { useSelector, useDispatch } from 'react-redux'
 import {closeNavMenu, scrollToSection, setActiveSection} from '../Features/eventReudcer'
 import {sections} from '../Features/eventReudcer'
-import {useScroll, motion } from 'framer-motion'
+import {motion } from 'framer-motion'
 
 
 const Menu = () => {
@@ -13,11 +12,11 @@ const Menu = () => {
   const { navMenuOpen } = useSelector((store) => store.eventSlice)
 
   useEffect(() => {
-    // dispatch(setActiveSection(Object.values(sections)))
-    const arr = []
     const values = Object.values(sections)
       dispatch(setActiveSection(values.current))
   }, [navMenuOpen]);
+
+
   return (
     <Wrapper style={{
       width: `${navMenuOpen ? '100%' : '0'}`
@@ -85,9 +84,8 @@ const Wrapper = styled.div`
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      color: var(--bgcolor);
+      color: var(--default-font-color);
       background: #111;
-      /* background: #111;  */
 
      }
 

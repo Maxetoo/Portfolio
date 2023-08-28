@@ -9,16 +9,13 @@ import {
   Articles,
   Contact,
 } from '../Components'
-import { useSelector, useDispatch } from 'react-redux'
-import {closeNavMenu} from '../Features/eventReudcer'
+import { useDispatch } from 'react-redux'
 
 const Home = () => {
-  const dispatch = useDispatch()
   return (
     <Wrapper>
       <div className="sidenav">
       <HomeProfile/>
-
       </div>
       <NavMenu/>
       <Introduction />

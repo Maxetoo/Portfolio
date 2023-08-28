@@ -4,20 +4,13 @@
 // SiHashnode
 // LuTwitter
 import { AiOutlineMail, AiOutlineGithub, AiOutlineHome} from 'react-icons/ai'
-import { HiMenuAlt4 } from 'react-icons/hi'
 import { AiOutlineUser } from 'react-icons/ai'
 import { BiSolidContact } from 'react-icons/bi'
 import { BiBookAlt } from 'react-icons/bi'
 import { MdWorkOutline } from 'react-icons/md'
 import { LuServer } from "react-icons/lu";
-// LuServer
-
-// import { FaHashnode } from 'react-icons/fa'
 import { SiHashnode } from 'react-icons/si'
 import { LuTwitter } from 'react-icons/lu'
-import Dojaworld from '../Assets/Dojaworld.png'
-import Nairaexchange from '../Assets/NairaExchange.png'
-import Notepad from '../Assets/Notepad.png'
 export const socials = [
   {
     id: 0,
@@ -67,8 +60,7 @@ export const projects = [
     techUsed: 'ReactJS + Redux Toolkit + ExpressJS + MongoDB',
     description:
       'An anonymous web application where you can send an receive indiviual and group anonymous messages',
-    link: '',
-    image: ''
+    link: 'https://writeme.onrender.com/signup',
   },
   {
     id: 1,
@@ -77,7 +69,6 @@ export const projects = [
     description:
       'A custom music web apllication that helps you stream popular Doja cat songs',
     link: 'https://dojaa-world.vercel.app/',
-    image: Dojaworld
 
   },
   {
@@ -86,7 +77,6 @@ export const projects = [
     techUsed: 'ReactJS + Styled components',
     description: 'A landing page for a crypto and giftcard vendor',
     link: 'https://nairaexchangeng.vercel.app/',
-    image: Nairaexchange
 
   },
   {
@@ -95,7 +85,6 @@ export const projects = [
     techUsed: 'ReactJS + Redux Toolkits',
     description: 'A replica of the a mobile notepad',
     link: 'https://notepad-inky.vercel.app/',
-    image: Notepad
 
   },
   {
@@ -105,7 +94,7 @@ export const projects = [
     description:
       'A react component button library that allows you create simple and beautiful buttons',
     link: 'https://github.com/Maxetoo/Sabi-Button-Lib',
-  image: 'https://cdn.dribbble.com/users/729829/screenshots/5306711/galshir-lemonade-icons_still_2x.gif?resize=640x480&vertical=center'
+ 
 
   },
 

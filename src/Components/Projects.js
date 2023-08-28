@@ -116,7 +116,7 @@ const Projects = () => {
 
 const Wrapper = styled.div`
 width: 100vw;
-min-height: 100vh;
+height: auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -181,18 +181,14 @@ min-height: 100vh;
     margin-top: 3rem;
     padding: 2rem;
     background: none;
-    border-radius: 2rem;
-    border: solid var(--secondary-border) var(--outline);
+    background: var(--containerbg);
+    border: solid 1px var(--containerbg);
+    
   }
 
   .selected--project:hover {
     transition: .5s all;
-    background: var(--primary);
-    color: var(--bgcolor);
-
-    .project-link {
-      text-decoration: underline;
-    }
+    border-bottom: solid 1.5px var(--primary);
 
     .project-view {
       color: var(--outline);
